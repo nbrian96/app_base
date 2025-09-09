@@ -291,17 +291,235 @@ A continuación, se detallan los módulos principales y su alcance.
 
 ---
 
-## 🛠️ Orden sugerido de implementación
+## 🛠️ Plan de Trabajo Detallado - E-Commerce Suite Pro
 
-1. **Infraestructura base**: auth, roles, configuración inicial  
-2. **Gestión de Catálogo**  
-3. **Carrito + Checkout (E-commerce funcional)**  
-4. **Calendario de Reservas**  
-5. **Gestión de Clientes (CRM básico)**  
-6. **Pipeline de Ventas (CRM avanzado)**  
-7. **Dashboard + Reportes Integrados**  
-8. **Inventario Inteligente**  
-9. **Notificaciones y Comunicación**  
+### **FASE 1: Infraestructura Base (Semanas 1-2)**
+
+#### **Semana 1: Configuración Inicial**
+- [ ] **1.1** Configurar roles y permisos (Admin, Manager, Vendedor, Cliente)
+- [ ] **1.2** Implementar autenticación con Laravel Breeze + Inertia
+- [ ] **1.3** Configurar middleware de roles y políticas de acceso
+- [ ] **1.4** Crear layout base con sidebar, navbar y header
+- [ ] **1.5** Implementar sistema de temas (Dark/Light)
+- [ ] **1.6** Configurar internacionalización (i18n) básica
+
+#### **Semana 2: Base de Datos y Modelos**
+- [ ] **2.1** Crear migraciones para entidades principales:
+  - `categories`, `products`, `product_variants`
+  - `customers`, `orders`, `order_items`
+  - `reservations`, `services`, `availability`
+  - `leads`, `opportunities`, `contacts`
+- [ ] **2.2** Crear modelos con relaciones Eloquent
+- [ ] **2.3** Implementar factories y seeders para datos de prueba
+- [ ] **2.4** Configurar soft deletes y timestamps
+- [ ] **2.5** Crear policies para control de acceso
+
+---
+
+### **FASE 2: Gestión de Catálogo (Semanas 3-4)**
+
+#### **Semana 3: Productos y Categorías**
+- [ ] **3.1** CRUD de categorías con árbol jerárquico
+- [ ] **3.2** CRUD de productos con variantes (color, talle, etc.)
+- [ ] **3.3** Gestión de imágenes y media manager
+- [ ] **3.4** Sistema de atributos y especificaciones
+- [ ] **3.5** Búsqueda y filtros de productos
+
+#### **Semana 4: Servicios Reservables**
+- [ ] **4.1** CRUD de servicios (diferente a productos)
+- [ ] **4.2** Configuración de duración y precios
+- [ ] **4.3** Gestión de recursos necesarios
+- [ ] **4.4** Integración servicios con catálogo general
+- [ ] **4.5** Validaciones de disponibilidad básica
+
+---
+
+### **FASE 3: E-commerce Funcional (Semanas 5-7)**
+
+#### **Semana 5: Carrito de Compras**
+- [ ] **5.1** Carrito persistente (sesión + usuario)
+- [ ] **5.2** Agregar/remover productos del carrito
+- [ ] **5.3** Cálculo de precios y descuentos
+- [ ] **5.4** Validación de stock en tiempo real
+- [ ] **5.5** Carrito para servicios reservables
+
+#### **Semana 6: Checkout y Pagos**
+- [ ] **6.1** Formulario de checkout multi-paso
+- [ ] **6.2** Gestión de direcciones de envío
+- [ ] **6.3** Cálculo de costos de envío
+- [ ] **6.4** Integración con Stripe/MercadoPago
+- [ ] **6.5** Confirmación de órdenes por email
+
+#### **Semana 7: Gestión de Órdenes**
+- [ ] **7.1** Panel de administración de órdenes
+- [ ] **7.2** Estados de órdenes (pendiente, procesando, enviado, etc.)
+- [ ] **7.3** Tracking de envíos
+- [ ] **7.4** Historial de órdenes para clientes
+- [ ] **7.5** Notificaciones de cambio de estado
+
+---
+
+### **FASE 4: Sistema de Reservas (Semanas 8-10)**
+
+#### **Semana 8: Calendario Base**
+- [ ] **8.1** Vista de calendario semanal/mensual
+- [ ] **8.2** Gestión de disponibilidad por servicio
+- [ ] **8.3** Configuración de horarios de trabajo
+- [ ] **8.4** Días festivos y excepciones
+- [ ] **8.5** Bloqueo de horarios no disponibles
+
+#### **Semana 9: Reservas Online**
+- [ ] **9.1** Formulario de reserva desde frontend
+- [ ] **9.2** Validación de disponibilidad en tiempo real
+- [ ] **9.3** Confirmación automática de reservas
+- [ ] **9.4** Integración con carrito de compras
+- [ ] **9.5** Recordatorios por email/SMS
+
+#### **Semana 10: Gestión de Reservas**
+- [ ] **10.1** Panel de administración de reservas
+- [ ] **10.2** Cancelaciones y reprogramaciones
+- [ ] **10.3** Lista de espera para horarios ocupados
+- [ ] **10.4** Reportes de ocupación
+- [ ] **10.5** Sincronización con inventario
+
+---
+
+### **FASE 5: CRM Básico (Semanas 11-12)**
+
+#### **Semana 11: Gestión de Clientes**
+- [ ] **11.1** Perfiles completos de clientes
+- [ ] **11.2** Historial de compras y reservas
+- [ ] **11.3** Notas y seguimientos manuales
+- [ ] **11.4** Segmentación básica de clientes
+- [ ] **11.5** Importación de contactos
+
+#### **Semana 12: Comunicación con Clientes**
+- [ ] **12.1** Sistema de notificaciones in-app
+- [ ] **12.2** Templates de email personalizables
+- [ ] **12.3** Campañas de marketing básicas
+- [ ] **12.4** Historial de comunicaciones
+- [ ] **12.5** Integración con WhatsApp (futuro)
+
+---
+
+### **FASE 6: CRM Avanzado (Semanas 13-15)**
+
+#### **Semana 13: Pipeline de Ventas**
+- [ ] **13.1** Registro y gestión de leads
+- [ ] **13.2** Oportunidades por etapas
+- [ ] **13.3** Conversión de leads a clientes
+- [ ] **13.4** Visualización estilo Kanban
+- [ ] **13.5** Seguimiento de actividades
+
+#### **Semana 14: Gestión de Oportunidades**
+- [ ] **14.1** Etapas personalizables del pipeline
+- [ ] **14.2** Probabilidades y valores estimados
+- [ ] **14.3** Tareas y recordatorios
+- [ ] **14.4** Reportes de conversión
+- [ ] **14.5** Integración con calendario
+
+#### **Semana 15: Analytics CRM**
+- [ ] **15.1** Métricas de ventas y conversión
+- [ ] **15.2** Tiempo promedio por etapa
+- [ ] **15.3** Performance por vendedor
+- [ ] **15.4** Predicciones de cierre
+- [ ] **15.5** Dashboards personalizables
+
+---
+
+### **FASE 7: Dashboard y Reportes (Semanas 16-17)**
+
+#### **Semana 16: Dashboard Unificado**
+- [ ] **16.1** Métricas clave en tiempo real
+- [ ] **16.2** Gráficos de ventas y reservas
+- [ ] **16.3** KPIs de CRM integrados
+- [ ] **16.4** Widgets personalizables
+- [ ] **16.5** Filtros por período y usuario
+
+#### **Semana 17: Reportes Integrados**
+- [ ] **17.1** Reportes de ventas detallados
+- [ ] **17.2** Analytics de reservas
+- [ ] **17.3** Reportes de clientes y CRM
+- [ ] **17.4** Exportación a CSV/Excel
+- [ ] **17.5** Reportes programados por email
+
+---
+
+### **FASE 8: Inventario Inteligente (Semanas 18-19)**
+
+#### **Semana 18: Gestión de Stock**
+- [ ] **18.1** Control de inventario en tiempo real
+- [ ] **18.2** Alertas de bajo stock
+- [ ] **18.3** Gestión de insumos para servicios
+- [ ] **18.4** Sincronización con órdenes
+- [ ] **18.5** Códigos de barras y SKUs
+
+#### **Semana 19: Optimización de Inventario**
+- [ ] **19.1** Predicción de demanda
+- [ ] **19.2** Puntos de reorden automáticos
+- [ ] **19.3** Gestión de proveedores
+- [ ] **19.4** Reportes de rotación
+- [ ] **19.5** Integración con reservas
+
+---
+
+### **FASE 9: Notificaciones y Comunicación (Semana 20)**
+
+#### **Semana 20: Sistema de Notificaciones**
+- [ ] **20.1** Notificaciones in-app (Vue + Laravel)
+- [ ] **20.2** Confirmaciones automáticas por email
+- [ ] **20.3** Recordatorios de reservas
+- [ ] **20.4** Alertas de actividad crítica
+- [ ] **20.5** Configuración de preferencias
+
+---
+
+### **FASE 10: Testing y Optimización (Semanas 21-22)**
+
+#### **Semana 21: Testing Integral**
+- [ ] **21.1** Tests unitarios con Pest (Laravel)
+- [ ] **21.2** Tests de integración para flujos críticos
+- [ ] **21.3** Tests de frontend con Vitest
+- [ ] **21.4** Tests E2E con Cypress/Playwright
+- [ ] **21.5** Testing de performance
+
+#### **Semana 22: Optimización y Deploy**
+- [ ] **22.1** Optimización de consultas de BD
+- [ ] **22.2** Caché de datos frecuentes
+- [ ] **22.3** Optimización de assets frontend
+- [ ] **22.4** Configuración de producción
+- [ ] **22.5** Documentación final y manual de usuario
+
+---
+
+## 📊 **Cronograma Resumido**
+
+| Fase | Duración | Módulos Principales |
+|------|----------|-------------------|
+| **Fase 1** | 2 semanas | Infraestructura base, Auth, Roles |
+| **Fase 2** | 2 semanas | Catálogo, Productos, Servicios |
+| **Fase 3** | 3 semanas | E-commerce funcional |
+| **Fase 4** | 3 semanas | Sistema de Reservas |
+| **Fase 5** | 2 semanas | CRM Básico |
+| **Fase 6** | 3 semanas | CRM Avanzado |
+| **Fase 7** | 2 semanas | Dashboard y Reportes |
+| **Fase 8** | 2 semanas | Inventario Inteligente |
+| **Fase 9** | 1 semana | Notificaciones |
+| **Fase 10** | 2 semanas | Testing y Deploy |
+| **TOTAL** | **22 semanas** | **Proyecto Completo** |
+
+---
+
+## 🎯 **Entregables por Fase**
+
+- **Fase 1-2**: Sistema base funcional con catálogo
+- **Fase 3**: E-commerce completamente operativo
+- **Fase 4**: Sistema de reservas integrado
+- **Fase 5-6**: CRM completo con pipeline
+- **Fase 7**: Dashboard unificado con reportes
+- **Fase 8**: Inventario inteligente
+- **Fase 9**: Sistema de notificaciones
+- **Fase 10**: Producto final optimizado y documentado  
 
 ---
 ---
