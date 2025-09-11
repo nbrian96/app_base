@@ -296,7 +296,7 @@ A continuación, se detallan los módulos principales y su alcance.
 ### **FASE 1: Infraestructura Base (Semanas 1-2)**
 
 #### **Semana 1: Configuración Inicial**
-- [ ] **1.1** Configurar roles y permisos (Admin, Manager, Vendedor, Cliente)
+- [x] **1.1** Configurar roles y permisos (Admin, Manager, Vendedor, Cliente)
 - [ ] **1.2** Implementar autenticación con Laravel Breeze + Inertia
 - [ ] **1.3** Configurar middleware de roles y políticas de acceso
 - [ ] **1.4** Crear layout base con sidebar, navbar y header
