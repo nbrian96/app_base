@@ -24,6 +24,16 @@ class UserSeeder extends Seeder
         );
         $admin->assignRole('admin');
 
+        $student = User::firstOrCreate(
+            ['email' => 'navila@fi.uba.ar'],
+            [
+                'name' => 'Estudiante FIUBA',
+                'email_verified_at' => now(),
+                'password' => Hash::make('sigead123456@'),
+            ]
+        );
+        $student->assignRole('student');
+
         // Crear usuario manager
         $manager = User::firstOrCreate(
             ['email' => 'manager@ecommerce.com'],

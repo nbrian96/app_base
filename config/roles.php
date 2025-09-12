@@ -16,6 +16,11 @@ return [
             'description' => 'Acceso completo al sistema',
             'permissions' => 'all', // Todos los permisos
         ],
+        'student' => [
+            'name' => 'Estudiante',
+            'description' => 'Acceso a la plataforma de estudio',
+            'permissions' => 'all',
+        ],
         'manager' => [
             'name' => 'Manager',
             'description' => 'Gestión operativa completa',
