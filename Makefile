@@ -46,3 +46,22 @@ build:
 dev:
 	$(NPM) run dev
 
+# Cache management
+clear-cache:
+	$(ARTISAN) cache:clear
+	$(ARTISAN) config:clear
+	$(ARTISAN) route:clear
+	$(ARTISAN) view:clear
+
+clear-all:
+	$(ARTISAN) optimize:clear
+	$(ARTISAN) cache:clear
+	$(ARTISAN) config:clear
+	$(ARTISAN) route:clear
+	$(ARTISAN) view:clear
+	$(ARTISAN) event:clear
+	$(ARTISAN) queue:clear
+
+optimize:
+	$(ARTISAN) optimize
+
